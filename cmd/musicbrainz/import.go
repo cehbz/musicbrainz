@@ -18,7 +18,11 @@ func newImportCmd() *cobra.Command {
 			if err != nil {
 				return err
 			}
-			fmt.Fprintf(cmd.OutOrStdout(), "imported: %d tables; discogs coverage: %v\n", len(rep.Counts), rep.DiscogsCoverage)
+			total := 0
+			for _, n := range rep.Orphans {
+				total += n
+			}
+			fmt.Fprintf(cmd.OutOrStdout(), "imported: %d tables; discogs coverage: %v; orphan total: %d\n", len(rep.Counts), rep.DiscogsCoverage, total)
 			if len(rep.Canonical) == 0 {
 				fmt.Fprintf(cmd.OutOrStdout(), "WARNING: canonical tables are empty\n")
 			} else {

@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-var reDiscogs = regexp.MustCompile(`discogs\.com/(artist|label|master|release)/(\d+)`)
+var reDiscogs = regexp.MustCompile(`discogs\.com/(?:[a-z]{2}/)?(artist|label|master|release)/(\d+)`)
 
 func ParseDiscogsID(url, entityType string) (int, bool) {
 	m := reDiscogs.FindStringSubmatch(url)
@@ -39,8 +39,8 @@ func (d *DB) EnrichDiscogs() (map[string]int, error) {
 	cov := map[string]int{}
 	for _, s := range enrichSpecs {
 		q := fmt.Sprintf(
-			`SELECT lk.entity0, u.url FROM %s lk JOIN url u ON u.id = lk.entity1 WHERE u.url LIKE '%%discogs.com/%s/%%'`,
-			s.linkTable, s.discogsTyp)
+			`SELECT lk.entity0, u.url FROM %s lk JOIN url u ON u.id = lk.entity1 WHERE u.url LIKE '%%discogs.com/%%'`,
+			s.linkTable)
 		rows, err := d.db.Query(q)
 		if err != nil {
 			return cov, fmt.Errorf("enrich query %s: %w", s.entity, err)

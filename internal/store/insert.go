@@ -7,11 +7,11 @@ import (
 )
 
 type Inserter struct {
-	db        *sql.DB
-	batch     int
-	boolCol   []bool
-	stmtSQL   string
-	pending   [][]any
+	db      *sql.DB
+	batch   int
+	boolCol []bool
+	stmtSQL string
+	pending [][]any
 }
 
 func (d *DB) NewInserter(table string, batch int) (*Inserter, error) {

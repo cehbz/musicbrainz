@@ -197,6 +197,12 @@ func RunImport(dataRoot, dumpDir string) (Report, error) {
 			return fail(err)
 		}
 	}
+	log.Printf("running referential-integrity checks (%d indexed FK relationships)...", len(orphanChecks))
+	orphans, err := db.OrphanPass()
+	if err != nil {
+		return fail(err)
+	}
+	rep.Orphans = orphans
 	if err := db.WriteMeta(map[string]string{
 		"schema_sequence":  fmt.Sprint(seq),
 		"dump_date":        dumpDate,

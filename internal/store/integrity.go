@@ -31,3 +31,29 @@ func (d *DB) OrphanCount(childTable, childCol, parentTable string) (int, error) 
 	err := d.db.QueryRow(q).Scan(&n)
 	return n, err
 }
+
+// orphanChecks are the FK relationships the import verifies (all FK columns are indexed,
+// so each is an indexed anti-join). Keyed "<child>.<col>" in the report.
+var orphanChecks = []struct{ child, col, parent string }{
+	{"artist_credit_name", "artist", "artist"},
+	{"artist_credit_name", "artist_credit", "artist_credit"},
+	{"isrc", "recording", "recording"},
+	{"release", "release_group", "release_group"},
+	{"release", "artist_credit", "artist_credit"},
+	{"recording", "artist_credit", "artist_credit"},
+	{"medium", "release", "release"},
+	{"track", "medium", "medium"},
+}
+
+// OrphanPass runs the curated orphan checks, returning "<child>.<col>" -> dangling count.
+func (d *DB) OrphanPass() (map[string]int, error) {
+	out := map[string]int{}
+	for _, c := range orphanChecks {
+		n, err := d.OrphanCount(c.child, c.col, c.parent)
+		if err != nil {
+			return out, fmt.Errorf("orphan check %s.%s: %w", c.child, c.col, err)
+		}
+		out[c.child+"."+c.col] = n
+	}
+	return out, nil
+}

@@ -26,6 +26,9 @@ func TestParseDiscogsID(t *testing.T) {
 		{"https://www.discogs.com/release/99", "release", 99, true},
 		{"https://example.com/artist/1", "artist", 0, false},
 		{"https://www.discogs.com/artist/12345", "label", 0, false}, // wrong type
+		{"https://www.discogs.com/fr/master/42", "master", 42, true},
+		{"https://www.discogs.com/fr/artist/12345", "label", 0, false}, // locale + wrong type
+		{"https://www.discogs.com/master/42", "master", 42, true},      // plain (no locale) still works
 	}
 	for _, c := range cases {
 		id, ok := ParseDiscogsID(c.url, c.typ)

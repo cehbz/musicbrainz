@@ -2,8 +2,8 @@
 package store
 
 import (
-	_ "embed"
 	"database/sql"
+	_ "embed"
 	"encoding/json"
 
 	"github.com/cehbz/musicbrainz/internal/schema"

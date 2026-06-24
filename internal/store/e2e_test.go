@@ -111,6 +111,9 @@ func TestRunImportEndToEnd(t *testing.T) {
 	if rep.Counts["artist"] != 1 {
 		t.Fatalf("artist count = %d, want 1", rep.Counts["artist"])
 	}
+	if len(rep.Orphans) != 8 {
+		t.Fatalf("orphan checks = %d, want 8", len(rep.Orphans))
+	}
 
 	// canonical coverage assertions
 	if rep.Canonical["canonical_recording_redirect"] != 1 {
