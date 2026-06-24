@@ -3,6 +3,7 @@ module github.com/cehbz/musicbrainz
 go 1.26.1
 
 require (
+	github.com/klauspost/compress v1.18.6
 	github.com/spf13/cobra v1.10.2
 	modernc.org/sqlite v1.53.0
 )
