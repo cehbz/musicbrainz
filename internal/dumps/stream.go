@@ -34,6 +34,17 @@ func StreamTarBz2(r io.Reader, fn func(name string, content io.Reader) error) er
 	return streamTar(tar.NewReader(bzip2.NewReader(r)), fn)
 }
 
+// StreamTarZst decompresses a zstd stream and walks its tar entries, calling
+// fn for each regular file.
+func StreamTarZst(r io.Reader, fn func(name string, content io.Reader) error) error {
+	zr, err := ZstdReader(r)
+	if err != nil {
+		return err
+	}
+	defer zr.Close()
+	return streamTar(tar.NewReader(zr), fn)
+}
+
 // readMetaTar reads SCHEMA_SEQUENCE and TIMESTAMP, stopping as soon as both are seen.
 func readMetaTar(tr *tar.Reader) (int, string, error) {
 	var seq int

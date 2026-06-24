@@ -77,3 +77,44 @@ func TestReadMeta(t *testing.T) {
 		t.Fatalf("ReadMeta = (%d,%q)", seq, ts)
 	}
 }
+
+func TestStreamTarZst(t *testing.T) {
+	files := map[string]string{
+		"musicbrainz-canonical-dump-20260617-080003/TIMESTAMP":                                  "20260617-080003\n",
+		"musicbrainz-canonical-dump-20260617-080003/canonical/canonical_recording_redirect.csv": "gid,canonical_recording\nfoo,bar\n",
+	}
+	tarBytes := writeTar(t, files)
+
+	var zb bytes.Buffer
+	w, err := zstd.NewWriter(&zb)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, err := w.Write(tarBytes); err != nil {
+		t.Fatal(err)
+	}
+	if err := w.Close(); err != nil {
+		t.Fatal(err)
+	}
+
+	seen := map[string]string{}
+	err = StreamTarZst(bytes.NewReader(zb.Bytes()), func(name string, r io.Reader) error {
+		b, err := io.ReadAll(r)
+		if err != nil {
+			return err
+		}
+		seen[name] = string(b)
+		return nil
+	})
+	if err != nil {
+		t.Fatalf("StreamTarZst error: %v", err)
+	}
+	for name, want := range files {
+		if got := seen[name]; got != want {
+			t.Errorf("entry %q = %q, want %q", name, got, want)
+		}
+	}
+	if len(seen) != len(files) {
+		t.Errorf("got %d entries, want %d", len(seen), len(files))
+	}
+}

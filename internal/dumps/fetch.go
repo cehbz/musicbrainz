@@ -10,8 +10,14 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 )
+
+// canonicalDirRe matches directory entries in the autoindex. The trailing
+// slash anchors the match to directories (never a bare filename like the
+// .tar.zst archive); strip it before comparing/returning.
+var canonicalDirRe = regexp.MustCompile(`musicbrainz-canonical-dump-\d{8}-\d{6}/`)
 
 type Client struct {
 	HTTP *http.Client
@@ -109,6 +115,67 @@ func VerifySHA256(dir, sumsFile string, files []string) error {
 		}
 	}
 	return nil
+}
+
+func (c *Client) canonicalRoot() string {
+	return strings.TrimSuffix(c.Base, "/data") + "/canonical_data"
+}
+
+// ResolveLatestCanonical fetches the canonical-data directory listing and
+// returns the name of the newest dump directory (lexical maximum of all
+// musicbrainz-canonical-dump-YYYYMMDD-HHMMSS entries).
+func (c *Client) ResolveLatestCanonical(ctx context.Context) (string, error) {
+	url := c.canonicalRoot() + "/"
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
+	if err != nil {
+		return "", err
+	}
+	resp, err := c.httpc().Do(req)
+	if err != nil {
+		return "", err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		return "", fmt.Errorf("canonical index: status %d", resp.StatusCode)
+	}
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", err
+	}
+	matches := canonicalDirRe.FindAllString(string(body), -1)
+	if len(matches) == 0 {
+		return "", fmt.Errorf("canonical index: no dump directories found")
+	}
+	latest := strings.TrimSuffix(matches[0], "/")
+	for _, m := range matches[1:] {
+		if d := strings.TrimSuffix(m, "/"); d > latest {
+			latest = d
+		}
+	}
+	return latest, nil
+}
+
+// DownloadCanonical downloads the tar.zst archive for the given dump directory
+// into dest, verifies its SHA256 checksum, and returns the local path to the
+// archive.
+func (c *Client) DownloadCanonical(ctx context.Context, dir, dest string) (string, error) {
+	root := c.canonicalRoot()
+	archiveName := dir + ".tar.zst"
+	sumName := archiveName + ".sha256"
+
+	archivePath := filepath.Join(dest, archiveName)
+	sumPath := filepath.Join(dest, sumName)
+
+	if err := c.Download(ctx, root+"/"+dir+"/"+archiveName, archivePath); err != nil {
+		return "", fmt.Errorf("download archive: %w", err)
+	}
+	if err := c.Download(ctx, root+"/"+dir+"/"+sumName, sumPath); err != nil {
+		return "", fmt.Errorf("download checksum: %w", err)
+	}
+	if err := VerifySHA256(dest, sumName, []string{archiveName}); err != nil {
+		return "", fmt.Errorf("verify: %w", err)
+	}
+	return archivePath, nil
 }
 
 func sha256File(path string) (string, error) {
