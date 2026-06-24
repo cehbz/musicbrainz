@@ -1,0 +1,10 @@
+# Compiled binary
+/musicbrainz
+
+# SDD scratch: task briefs, reports, and the progress ledger
+.superpowers/
+
+# SQLite scratch (real DBs live on the X10, never in-repo)
+*.db
+*.db-wal
+*.db-shm
