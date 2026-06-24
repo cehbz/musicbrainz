@@ -5,8 +5,11 @@ import (
 	"compress/bzip2"
 	"fmt"
 	"io"
+	"os"
+	"path/filepath"
 	"strings"
 
+	"github.com/cehbz/musicbrainz/internal/dumps"
 	"github.com/cehbz/musicbrainz/internal/parse"
 )
 
@@ -103,4 +106,109 @@ func loadTable(db *DB, table string, r io.Reader) (inserted, malformed int, err 
 // LoadTarballBz2 is the entry point: decompress a .tar.bz2 stream and load its mbdump/ tables.
 func LoadTarballBz2(db *DB, r io.Reader) (LoadResult, error) {
 	return loadTarStream(db, tar.NewReader(bzip2.NewReader(r)))
+}
+
+// RunImport orchestrates the full import pipeline:
+// read meta → guard sequence → create schema → load tarballs → load canonical CSVs →
+// build indexes + FTS → enrich Discogs → set serving PRAGMAs → write meta → atomically repoint symlink.
+func RunImport(dataRoot, dumpDir string) (Report, error) {
+	var rep Report
+	if err := os.MkdirAll(dataRoot, 0o755); err != nil {
+		return rep, err
+	}
+	seq, ts, err := dumps.ReadMeta(filepath.Join(dumpDir, "mbdump.tar.bz2"))
+	if err != nil {
+		return rep, fmt.Errorf("read meta: %w", err)
+	}
+	if err := GuardSequence(seq); err != nil {
+		return rep, err
+	}
+	dumpDate := strings.ReplaceAll(strings.SplitN(ts, " ", 2)[0], "-", "")
+	dbPath := filepath.Join(dataRoot, "musicbrainz-"+dumpDate+".db")
+	_ = os.Remove(dbPath)
+
+	db, err := Open(dbPath, ModeImport)
+	if err != nil {
+		return rep, err
+	}
+	fail := func(e error) (Report, error) { db.Close(); return rep, e }
+	if err := db.CreateSchema(); err != nil {
+		return fail(err)
+	}
+	if err := db.CreateCanonicalSchema(); err != nil { // BEFORE BuildIndexes
+		return fail(err)
+	}
+
+	counts := map[string]int{}
+	malformed := map[string]int{}
+	var skipped []string
+	for _, name := range []string{"mbdump.tar.bz2", "mbdump-derived.tar.bz2"} {
+		f, err := os.Open(filepath.Join(dumpDir, name))
+		if err != nil {
+			return fail(err)
+		}
+		res, err := LoadTarballBz2(db, f)
+		f.Close()
+		if err != nil {
+			return fail(err)
+		}
+		for k, v := range res.Counts {
+			counts[k] += v
+		}
+		for k, v := range res.Malformed {
+			malformed[k] += v
+		}
+		skipped = append(skipped, res.Skipped...)
+	}
+
+	for _, t := range []string{"canonical_musicbrainz_data", "canonical_recording_redirect", "canonical_release_redirect"} {
+		f, err := os.Open(filepath.Join(dumpDir, t+".csv"))
+		if err != nil {
+			continue // canonical CSV optional if absent from dumpDir
+		}
+		_, err = db.LoadCanonical(t, f)
+		f.Close()
+		if err != nil {
+			return fail(err)
+		}
+	}
+
+	if err := db.BuildIndexes(); err != nil {
+		return fail(err)
+	}
+	if err := db.BuildFTS(); err != nil {
+		return fail(err)
+	}
+	cov, err := db.EnrichDiscogs()
+	if err != nil {
+		return fail(err)
+	}
+	// switch to serving PRAGMAs (WAL persists in the file) + optimize
+	for _, p := range []string{"PRAGMA journal_mode=WAL", "PRAGMA synchronous=NORMAL", "ANALYZE"} {
+		if _, err := db.SQL().Exec(p); err != nil {
+			return fail(err)
+		}
+	}
+	if err := db.WriteMeta(map[string]string{
+		"schema_sequence":  fmt.Sprint(seq),
+		"dump_date":        dumpDate,
+		"importer_version": "0.1.0",
+	}); err != nil {
+		return fail(err)
+	}
+	db.Close()
+
+	// atomically repoint the musicbrainz.db symlink to the verified new file
+	link := filepath.Join(dataRoot, "musicbrainz.db")
+	tmp := link + ".tmp"
+	_ = os.Remove(tmp)
+	if err := os.Symlink(filepath.Base(dbPath), tmp); err != nil {
+		return rep, err
+	}
+	if err := os.Rename(tmp, link); err != nil {
+		return rep, err
+	}
+
+	rep.Counts, rep.Malformed, rep.Skipped, rep.DiscogsCoverage = counts, malformed, skipped, cov
+	return rep, nil
 }

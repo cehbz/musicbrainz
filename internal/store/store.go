@@ -71,3 +71,11 @@ func (d *DB) CreateSchema() error {
 func (d *DB) Manifest() schema.Manifest { return d.manifest }
 func (d *DB) SQL() *sql.DB              { return d.db }
 func (d *DB) Close() error              { return d.db.Close() }
+
+// LoadEmbeddedManifest returns the build's pinned column manifest (parsed from the
+// embedded manifest_seq31.json) without opening a database.
+func LoadEmbeddedManifest() schema.Manifest {
+	var m schema.Manifest
+	_ = json.Unmarshal(manifestJSON, &m)
+	return m
+}

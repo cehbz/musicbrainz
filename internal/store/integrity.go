@@ -6,6 +6,8 @@ type Report struct {
 	Counts          map[string]int
 	Orphans         map[string]int
 	DiscogsCoverage map[string]int
+	Skipped         []string       // mbdump entries with no matching table
+	Malformed       map[string]int // table -> rows skipped (bad column count)
 }
 
 func (d *DB) TableCounts(tables []string) (map[string]int, error) {

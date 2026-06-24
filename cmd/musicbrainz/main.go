@@ -21,6 +21,7 @@ func newRootCmd() *cobra.Command {
 		},
 	})
 	root.AddCommand(newGenSchemaCmd())
+	root.AddCommand(newFetchCmd(), newImportCmd(), newBuildCmd(), newVerifyCmd())
 	return root
 }
 
