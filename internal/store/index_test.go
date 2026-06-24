@@ -72,6 +72,9 @@ func TestBuildIndexes(t *testing.T) {
 	if err := db.CreateSchema(); err != nil {
 		t.Fatal(err)
 	}
+	if err := db.CreateCanonicalSchema(); err != nil {
+		t.Fatal(err)
+	}
 	if err := db.BuildIndexes(); err != nil {
 		t.Fatalf("BuildIndexes: %v", err)
 	}
@@ -81,7 +84,7 @@ func TestBuildIndexes(t *testing.T) {
 	).Scan(&n); err != nil {
 		t.Fatal(err)
 	}
-	const expectedIndexes = 974
+	const expectedIndexes = 980
 	if n != expectedIndexes {
 		t.Fatalf("index count = %d, want %d; the generated index DDL changed or did not fully execute", n, expectedIndexes)
 	}

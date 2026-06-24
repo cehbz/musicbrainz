@@ -10,10 +10,26 @@ CREATE VIRTUAL TABLE release_fts       USING fts5(title, artist_names, content='
 CREATE VIRTUAL TABLE recording_fts     USING fts5(title, artist_names, content='', tokenize='unicode61 remove_diacritics 2');
 `
 
-// BuildIndexes executes the embedded generated index DDL.
+// BuildIndexes executes the embedded generated index DDL (one index per FK + every gid)
+// and appends the canonical redirect indexes. Precondition: BOTH CreateSchema and
+// CreateCanonicalSchema must have run — it indexes the core AND the canonical tables, so
+// the canonical block fails with "no such table" if CreateCanonicalSchema was skipped.
+// Call after the bulk load (index building dominates build time).
 func (d *DB) BuildIndexes() error {
-	_, err := d.db.Exec(indexesSQL)
-	return err
+	if _, err := d.db.Exec(indexesSQL); err != nil {
+		return err
+	}
+	canonIdx := `
+CREATE INDEX IF NOT EXISTS crr_recording ON canonical_recording_redirect(recording_mbid);
+CREATE INDEX IF NOT EXISTS crr_release   ON canonical_recording_redirect(canonical_release_mbid);
+CREATE INDEX IF NOT EXISTS crl_release   ON canonical_release_redirect(release_mbid);
+CREATE INDEX IF NOT EXISTS crl_rg        ON canonical_release_redirect(release_group_mbid);
+CREATE INDEX IF NOT EXISTS cmd_recording ON canonical_musicbrainz_data(recording_mbid);
+CREATE INDEX IF NOT EXISTS cmd_lookup    ON canonical_musicbrainz_data(combined_lookup);`
+	if _, err := d.db.Exec(canonIdx); err != nil {
+		return err
+	}
+	return nil
 }
 
 // BuildFTS creates the six contentless FTS5 virtual tables and populates them.
