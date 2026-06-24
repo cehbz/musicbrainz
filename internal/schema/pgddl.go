@@ -193,6 +193,13 @@ func ParseTables(sql string) (map[string][]rawCol, []string, error) {
 		}
 		name := strings.TrimSuffix(toks[idx], "(")
 
+		// Skip PostgreSQL partition sub-tables (PARTITION OF <parent> ...).
+		// They inherit their schema from the parent and have no column body
+		// SQLite can use; the parent table already covers them.
+		if strings.Contains(strings.ToUpper(stmt), "PARTITION OF") {
+			continue
+		}
+
 		body, _, ok := parenBody(stmt)
 		if !ok {
 			continue

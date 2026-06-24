@@ -1,0 +1,8117 @@
+{
+  "schema_sequence": 31,
+  "tables": {
+    "alternative_medium": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "medium"
+      },
+      {
+        "name": "alternative_release"
+      },
+      {
+        "name": "name"
+      }
+    ],
+    "alternative_medium_track": [
+      {
+        "name": "alternative_medium"
+      },
+      {
+        "name": "track"
+      },
+      {
+        "name": "alternative_track"
+      }
+    ],
+    "alternative_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "release"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "artist_credit"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "language"
+      },
+      {
+        "name": "script"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "alternative_release_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "alternative_track": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "artist_credit"
+      },
+      {
+        "name": "ref_count"
+      }
+    ],
+    "annotation": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "text"
+      },
+      {
+        "name": "changelog"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "application": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "owner"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "oauth_id"
+      },
+      {
+        "name": "oauth_secret"
+      },
+      {
+        "name": "oauth_redirect_uri"
+      }
+    ],
+    "area": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "ended",
+        "bool": true
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "area_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "area"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "area_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "area_annotation": [
+      {
+        "name": "area"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "area_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "area"
+      },
+      {
+        "name": "area_attribute_type"
+      },
+      {
+        "name": "area_attribute_type_allowed_value"
+      },
+      {
+        "name": "area_attribute_text"
+      }
+    ],
+    "area_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "area_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "area_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "area_containment": [
+      {
+        "name": "descendant"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "depth"
+      }
+    ],
+    "area_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "area_tag": [
+      {
+        "name": "area"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "area_tag_raw": [
+      {
+        "name": "area"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "area_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "artist": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "area"
+      },
+      {
+        "name": "gender"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "ended",
+        "bool": true
+      },
+      {
+        "name": "begin_area"
+      },
+      {
+        "name": "end_area"
+      }
+    ],
+    "artist_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "artist"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "artist_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "artist_annotation": [
+      {
+        "name": "artist"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "artist_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "artist"
+      },
+      {
+        "name": "artist_attribute_type"
+      },
+      {
+        "name": "artist_attribute_type_allowed_value"
+      },
+      {
+        "name": "artist_attribute_text"
+      }
+    ],
+    "artist_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "artist_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "artist_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "artist_credit": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "artist_count"
+      },
+      {
+        "name": "ref_count"
+      },
+      {
+        "name": "created"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "artist_credit_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "artist_credit_name": [
+      {
+        "name": "artist_credit"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "artist"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "join_phrase"
+      }
+    ],
+    "artist_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "artist_ipi": [
+      {
+        "name": "artist"
+      },
+      {
+        "name": "ipi"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "artist_isni": [
+      {
+        "name": "artist"
+      },
+      {
+        "name": "isni"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "artist_meta": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "rating"
+      },
+      {
+        "name": "rating_count"
+      }
+    ],
+    "artist_rating_raw": [
+      {
+        "name": "artist"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "rating"
+      }
+    ],
+    "artist_release": [
+      {
+        "name": "is_track_artist",
+        "bool": true
+      },
+      {
+        "name": "artist"
+      },
+      {
+        "name": "first_release_date"
+      },
+      {
+        "name": "catalog_numbers"
+      },
+      {
+        "name": "country_code"
+      },
+      {
+        "name": "barcode"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "release"
+      }
+    ],
+    "artist_release_group": [
+      {
+        "name": "is_track_artist",
+        "bool": true
+      },
+      {
+        "name": "artist"
+      },
+      {
+        "name": "unofficial",
+        "bool": true
+      },
+      {
+        "name": "primary_type_child_order"
+      },
+      {
+        "name": "primary_type"
+      },
+      {
+        "name": "secondary_type_child_orders"
+      },
+      {
+        "name": "secondary_types"
+      },
+      {
+        "name": "first_release_date"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "release_group"
+      }
+    ],
+    "artist_release_group_pending_update": [
+      {
+        "name": "release_group"
+      }
+    ],
+    "artist_release_pending_update": [
+      {
+        "name": "release"
+      }
+    ],
+    "artist_tag": [
+      {
+        "name": "artist"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "artist_tag_raw": [
+      {
+        "name": "artist"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "artist_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "autoeditor_election": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "candidate"
+      },
+      {
+        "name": "proposer"
+      },
+      {
+        "name": "seconder_1"
+      },
+      {
+        "name": "seconder_2"
+      },
+      {
+        "name": "status"
+      },
+      {
+        "name": "yes_votes"
+      },
+      {
+        "name": "no_votes"
+      },
+      {
+        "name": "propose_time"
+      },
+      {
+        "name": "open_time"
+      },
+      {
+        "name": "close_time"
+      }
+    ],
+    "autoeditor_election_vote": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "autoeditor_election"
+      },
+      {
+        "name": "voter"
+      },
+      {
+        "name": "vote"
+      },
+      {
+        "name": "vote_time"
+      }
+    ],
+    "cdtoc": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "discid"
+      },
+      {
+        "name": "freedb_id"
+      },
+      {
+        "name": "track_count"
+      },
+      {
+        "name": "leadout_offset"
+      },
+      {
+        "name": "track_offset"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "cdtoc_raw": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release"
+      },
+      {
+        "name": "discid"
+      },
+      {
+        "name": "track_count"
+      },
+      {
+        "name": "leadout_offset"
+      },
+      {
+        "name": "track_offset"
+      }
+    ],
+    "country_area": [
+      {
+        "name": "area"
+      }
+    ],
+    "deleted_entity": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "data"
+      },
+      {
+        "name": "deleted_at"
+      }
+    ],
+    "edit": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "status"
+      },
+      {
+        "name": "autoedit"
+      },
+      {
+        "name": "open_time"
+      },
+      {
+        "name": "close_time"
+      },
+      {
+        "name": "expire_time"
+      },
+      {
+        "name": "language"
+      },
+      {
+        "name": "quality"
+      }
+    ],
+    "edit_area": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "area"
+      }
+    ],
+    "edit_artist": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "artist"
+      },
+      {
+        "name": "status"
+      }
+    ],
+    "edit_data": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "data"
+      }
+    ],
+    "edit_event": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "event"
+      }
+    ],
+    "edit_genre": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "genre"
+      }
+    ],
+    "edit_instrument": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "instrument"
+      }
+    ],
+    "edit_label": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "status"
+      }
+    ],
+    "edit_mood": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "mood"
+      }
+    ],
+    "edit_note": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "edit"
+      },
+      {
+        "name": "text"
+      },
+      {
+        "name": "post_time"
+      }
+    ],
+    "edit_note_change": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "status"
+      },
+      {
+        "name": "edit_note"
+      },
+      {
+        "name": "change_editor"
+      },
+      {
+        "name": "change_time"
+      },
+      {
+        "name": "old_note"
+      },
+      {
+        "name": "new_note"
+      },
+      {
+        "name": "reason"
+      }
+    ],
+    "edit_note_recipient": [
+      {
+        "name": "recipient"
+      },
+      {
+        "name": "edit_note"
+      }
+    ],
+    "edit_place": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "place"
+      }
+    ],
+    "edit_recording": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "recording"
+      }
+    ],
+    "edit_release": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "release"
+      }
+    ],
+    "edit_release_group": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "release_group"
+      }
+    ],
+    "edit_series": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "series"
+      }
+    ],
+    "edit_url": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "url"
+      }
+    ],
+    "edit_work": [
+      {
+        "name": "edit"
+      },
+      {
+        "name": "work"
+      }
+    ],
+    "editor": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "privs"
+      },
+      {
+        "name": "email"
+      },
+      {
+        "name": "website"
+      },
+      {
+        "name": "bio"
+      },
+      {
+        "name": "member_since"
+      },
+      {
+        "name": "email_confirm_date"
+      },
+      {
+        "name": "last_login_date"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "birth_date"
+      },
+      {
+        "name": "gender"
+      },
+      {
+        "name": "area"
+      },
+      {
+        "name": "password"
+      },
+      {
+        "name": "ha1"
+      },
+      {
+        "name": "deleted",
+        "bool": true
+      }
+    ],
+    "editor_collection": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "public",
+        "bool": true
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "type"
+      }
+    ],
+    "editor_collection_area": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "area"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_artist": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "artist"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_collaborator": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "editor"
+      }
+    ],
+    "editor_collection_deleted_entity": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_event": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "event"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_genre": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "genre"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "editor_collection_instrument": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "instrument"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_label": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_place": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "place"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_recording": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "recording"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_release": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "release"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_release_group": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "release_group"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_series": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "series"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_collection_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "entity_type"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "editor_collection_work": [
+      {
+        "name": "collection"
+      },
+      {
+        "name": "work"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "editor_language": [
+      {
+        "name": "editor"
+      },
+      {
+        "name": "language"
+      },
+      {
+        "name": "fluency"
+      }
+    ],
+    "editor_oauth_token": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "application"
+      },
+      {
+        "name": "authorization_code"
+      },
+      {
+        "name": "refresh_token"
+      },
+      {
+        "name": "access_token"
+      },
+      {
+        "name": "expire_time"
+      },
+      {
+        "name": "scope"
+      },
+      {
+        "name": "granted"
+      },
+      {
+        "name": "code_challenge"
+      },
+      {
+        "name": "code_challenge_method"
+      }
+    ],
+    "editor_preference": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "editor_subscribe_artist": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "artist"
+      },
+      {
+        "name": "last_edit_sent"
+      }
+    ],
+    "editor_subscribe_artist_deleted": [
+      {
+        "name": "editor"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "deleted_by"
+      }
+    ],
+    "editor_subscribe_collection": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "collection"
+      },
+      {
+        "name": "last_edit_sent"
+      },
+      {
+        "name": "available",
+        "bool": true
+      },
+      {
+        "name": "last_seen_name"
+      }
+    ],
+    "editor_subscribe_editor": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "subscribed_editor"
+      },
+      {
+        "name": "last_edit_sent"
+      }
+    ],
+    "editor_subscribe_label": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "last_edit_sent"
+      }
+    ],
+    "editor_subscribe_label_deleted": [
+      {
+        "name": "editor"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "deleted_by"
+      }
+    ],
+    "editor_subscribe_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "series"
+      },
+      {
+        "name": "last_edit_sent"
+      }
+    ],
+    "editor_subscribe_series_deleted": [
+      {
+        "name": "editor"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "deleted_by"
+      }
+    ],
+    "event": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "time"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "cancelled",
+        "bool": true
+      },
+      {
+        "name": "setlist"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "event_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "event"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "event_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "event_annotation": [
+      {
+        "name": "event"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "event_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "event"
+      },
+      {
+        "name": "event_attribute_type"
+      },
+      {
+        "name": "event_attribute_type_allowed_value"
+      },
+      {
+        "name": "event_attribute_text"
+      }
+    ],
+    "event_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "event_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "event_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "event_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "event_meta": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "rating"
+      },
+      {
+        "name": "rating_count"
+      },
+      {
+        "name": "event_art_presence"
+      }
+    ],
+    "event_rating_raw": [
+      {
+        "name": "event"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "rating"
+      }
+    ],
+    "event_tag": [
+      {
+        "name": "event"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "event_tag_raw": [
+      {
+        "name": "event"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "event_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "gender": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "genre": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "genre_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "genre"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "genre_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "genre_annotation": [
+      {
+        "name": "genre"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "instrument": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "description"
+      }
+    ],
+    "instrument_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "instrument"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "instrument_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "instrument_annotation": [
+      {
+        "name": "instrument"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "instrument_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "instrument"
+      },
+      {
+        "name": "instrument_attribute_type"
+      },
+      {
+        "name": "instrument_attribute_type_allowed_value"
+      },
+      {
+        "name": "instrument_attribute_text"
+      }
+    ],
+    "instrument_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "instrument_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "instrument_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "instrument_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "instrument_tag": [
+      {
+        "name": "instrument"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "instrument_tag_raw": [
+      {
+        "name": "instrument"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "instrument_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "iso_3166_1": [
+      {
+        "name": "area"
+      },
+      {
+        "name": "code"
+      }
+    ],
+    "iso_3166_2": [
+      {
+        "name": "area"
+      },
+      {
+        "name": "code"
+      }
+    ],
+    "iso_3166_3": [
+      {
+        "name": "area"
+      },
+      {
+        "name": "code"
+      }
+    ],
+    "isrc": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "recording"
+      },
+      {
+        "name": "isrc"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "iswc": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "work"
+      },
+      {
+        "name": "iswc"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "l_area_area": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_artist": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_event": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_genre": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_instrument": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_label": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_mood": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_place": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_recording": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_area_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_artist": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_event": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_genre": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_instrument": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_label": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_mood": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_place": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_recording": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_artist_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_event": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_genre": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_instrument": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_label": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_mood": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_place": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_recording": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_event_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_genre": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_instrument": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_label": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_mood": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_place": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_recording": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_genre_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_instrument_instrument": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_instrument_label": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_instrument_mood": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_instrument_place": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_instrument_recording": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_instrument_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_instrument_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_instrument_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_instrument_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_instrument_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_label_label": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_label_mood": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_label_place": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_label_recording": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_label_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_label_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_label_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_label_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_label_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_mood_mood": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_mood_place": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_mood_recording": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_mood_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_mood_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_mood_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_mood_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_mood_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_place_place": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_place_recording": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_place_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_place_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_place_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_place_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_place_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_recording_recording": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_recording_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_recording_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_recording_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_recording_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_recording_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_release_group_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_release_group_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_release_group_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_release_group_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_release_release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_release_release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_release_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_release_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_release_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_series_series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_series_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_series_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_url_url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_url_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "l_work_work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link"
+      },
+      {
+        "name": "entity0"
+      },
+      {
+        "name": "entity1"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "link_order"
+      },
+      {
+        "name": "entity0_credit"
+      },
+      {
+        "name": "entity1_credit"
+      }
+    ],
+    "label": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "label_code"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "area"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "label_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "label_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "label_annotation": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "label_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "label_attribute_type"
+      },
+      {
+        "name": "label_attribute_type_allowed_value"
+      },
+      {
+        "name": "label_attribute_text"
+      }
+    ],
+    "label_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "label_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "label_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "label_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "label_ipi": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "ipi"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "label_isni": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "isni"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "label_meta": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "rating"
+      },
+      {
+        "name": "rating_count"
+      }
+    ],
+    "label_rating_raw": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "rating"
+      }
+    ],
+    "label_tag": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "label_tag_raw": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "label_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "language": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "iso_code_2t"
+      },
+      {
+        "name": "iso_code_2b"
+      },
+      {
+        "name": "iso_code_1"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "frequency"
+      },
+      {
+        "name": "iso_code_3"
+      }
+    ],
+    "link": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "link_type"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "attribute_count"
+      },
+      {
+        "name": "created"
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "link_attribute": [
+      {
+        "name": "link"
+      },
+      {
+        "name": "attribute_type"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "link_attribute_credit": [
+      {
+        "name": "link"
+      },
+      {
+        "name": "attribute_type"
+      },
+      {
+        "name": "credited_as"
+      }
+    ],
+    "link_attribute_text_value": [
+      {
+        "name": "link"
+      },
+      {
+        "name": "attribute_type"
+      },
+      {
+        "name": "text_value"
+      }
+    ],
+    "link_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "root"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "link_creditable_attribute_type": [
+      {
+        "name": "attribute_type"
+      }
+    ],
+    "link_text_attribute_type": [
+      {
+        "name": "attribute_type"
+      }
+    ],
+    "link_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "entity_type0"
+      },
+      {
+        "name": "entity_type1"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "link_phrase"
+      },
+      {
+        "name": "reverse_link_phrase"
+      },
+      {
+        "name": "long_link_phrase"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "is_deprecated",
+        "bool": true
+      },
+      {
+        "name": "has_dates",
+        "bool": true
+      },
+      {
+        "name": "entity0_cardinality"
+      },
+      {
+        "name": "entity1_cardinality"
+      }
+    ],
+    "link_type_attribute_type": [
+      {
+        "name": "link_type"
+      },
+      {
+        "name": "attribute_type"
+      },
+      {
+        "name": "min"
+      },
+      {
+        "name": "max"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "medium": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "format"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "track_count"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "medium_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "medium"
+      },
+      {
+        "name": "medium_attribute_type"
+      },
+      {
+        "name": "medium_attribute_type_allowed_value"
+      },
+      {
+        "name": "medium_attribute_text"
+      }
+    ],
+    "medium_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "medium_attribute_type_allowed_format": [
+      {
+        "name": "medium_format"
+      },
+      {
+        "name": "medium_attribute_type"
+      }
+    ],
+    "medium_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "medium_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "medium_attribute_type_allowed_value_allowed_format": [
+      {
+        "name": "medium_format"
+      },
+      {
+        "name": "medium_attribute_type_allowed_value"
+      }
+    ],
+    "medium_cdtoc": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "medium"
+      },
+      {
+        "name": "cdtoc"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "medium_format": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "year"
+      },
+      {
+        "name": "has_discids",
+        "bool": true
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "medium_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "medium_index": [
+      {
+        "name": "medium"
+      },
+      {
+        "name": "toc"
+      }
+    ],
+    "mood": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "mood_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "mood"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "mood_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "mood_annotation": [
+      {
+        "name": "mood"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "old_editor_name": [
+      {
+        "name": "name"
+      }
+    ],
+    "orderable_link_type": [
+      {
+        "name": "link_type"
+      },
+      {
+        "name": "direction"
+      }
+    ],
+    "place": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "address"
+      },
+      {
+        "name": "area"
+      },
+      {
+        "name": "coordinates"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "place_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "place"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "place_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "place_annotation": [
+      {
+        "name": "place"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "place_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "place"
+      },
+      {
+        "name": "place_attribute_type"
+      },
+      {
+        "name": "place_attribute_type_allowed_value"
+      },
+      {
+        "name": "place_attribute_text"
+      }
+    ],
+    "place_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "place_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "place_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "place_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "place_meta": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "rating"
+      },
+      {
+        "name": "rating_count"
+      }
+    ],
+    "place_rating_raw": [
+      {
+        "name": "place"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "rating"
+      }
+    ],
+    "place_tag": [
+      {
+        "name": "place"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "place_tag_raw": [
+      {
+        "name": "place"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "place_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "recording": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "artist_credit"
+      },
+      {
+        "name": "length"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "video",
+        "bool": true
+      }
+    ],
+    "recording_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "recording"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "recording_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "recording_annotation": [
+      {
+        "name": "recording"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "recording_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "recording"
+      },
+      {
+        "name": "recording_attribute_type"
+      },
+      {
+        "name": "recording_attribute_type_allowed_value"
+      },
+      {
+        "name": "recording_attribute_text"
+      }
+    ],
+    "recording_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "recording_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "recording_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "recording_first_release_date": [
+      {
+        "name": "recording"
+      },
+      {
+        "name": "year"
+      },
+      {
+        "name": "month"
+      },
+      {
+        "name": "day"
+      }
+    ],
+    "recording_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "recording_meta": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "rating"
+      },
+      {
+        "name": "rating_count"
+      }
+    ],
+    "recording_rating_raw": [
+      {
+        "name": "recording"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "rating"
+      }
+    ],
+    "recording_tag": [
+      {
+        "name": "recording"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "recording_tag_raw": [
+      {
+        "name": "recording"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "release": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "artist_credit"
+      },
+      {
+        "name": "release_group"
+      },
+      {
+        "name": "status"
+      },
+      {
+        "name": "packaging"
+      },
+      {
+        "name": "language"
+      },
+      {
+        "name": "script"
+      },
+      {
+        "name": "barcode"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "quality"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "release_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "release_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "release_annotation": [
+      {
+        "name": "release"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "release_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release"
+      },
+      {
+        "name": "release_attribute_type"
+      },
+      {
+        "name": "release_attribute_type_allowed_value"
+      },
+      {
+        "name": "release_attribute_text"
+      }
+    ],
+    "release_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "release_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "release_country": [
+      {
+        "name": "release"
+      },
+      {
+        "name": "country"
+      },
+      {
+        "name": "date_year"
+      },
+      {
+        "name": "date_month"
+      },
+      {
+        "name": "date_day"
+      }
+    ],
+    "release_first_release_date": [
+      {
+        "name": "release"
+      },
+      {
+        "name": "year"
+      },
+      {
+        "name": "month"
+      },
+      {
+        "name": "day"
+      }
+    ],
+    "release_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "release_group": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "artist_credit"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "release_group_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release_group"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "release_group_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "release_group_annotation": [
+      {
+        "name": "release_group"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "release_group_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release_group"
+      },
+      {
+        "name": "release_group_attribute_type"
+      },
+      {
+        "name": "release_group_attribute_type_allowed_value"
+      },
+      {
+        "name": "release_group_attribute_text"
+      }
+    ],
+    "release_group_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "release_group_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release_group_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "release_group_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "release_group_meta": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release_count"
+      },
+      {
+        "name": "first_release_date_year"
+      },
+      {
+        "name": "first_release_date_month"
+      },
+      {
+        "name": "first_release_date_day"
+      },
+      {
+        "name": "rating"
+      },
+      {
+        "name": "rating_count"
+      }
+    ],
+    "release_group_primary_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "release_group_rating_raw": [
+      {
+        "name": "release_group"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "rating"
+      }
+    ],
+    "release_group_secondary_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "release_group_secondary_type_join": [
+      {
+        "name": "release_group"
+      },
+      {
+        "name": "secondary_type"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "release_group_tag": [
+      {
+        "name": "release_group"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "release_group_tag_raw": [
+      {
+        "name": "release_group"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "release_label": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "catalog_number"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "release_meta": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "date_added"
+      },
+      {
+        "name": "info_url"
+      },
+      {
+        "name": "amazon_asin"
+      },
+      {
+        "name": "cover_art_presence"
+      }
+    ],
+    "release_packaging": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "release_raw": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "title"
+      },
+      {
+        "name": "artist"
+      },
+      {
+        "name": "added"
+      },
+      {
+        "name": "last_modified"
+      },
+      {
+        "name": "lookup_count"
+      },
+      {
+        "name": "modify_count"
+      },
+      {
+        "name": "source"
+      },
+      {
+        "name": "barcode"
+      },
+      {
+        "name": "comment"
+      }
+    ],
+    "release_status": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "release_tag": [
+      {
+        "name": "release"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "release_tag_raw": [
+      {
+        "name": "release"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "release_unknown_country": [
+      {
+        "name": "release"
+      },
+      {
+        "name": "date_year"
+      },
+      {
+        "name": "date_month"
+      },
+      {
+        "name": "date_day"
+      }
+    ],
+    "replication_control": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "current_schema_sequence"
+      },
+      {
+        "name": "current_replication_sequence"
+      },
+      {
+        "name": "last_replication_date"
+      }
+    ],
+    "script": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "iso_code"
+      },
+      {
+        "name": "iso_number"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "frequency"
+      }
+    ],
+    "series": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "ordering_type"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "series_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "series"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "series_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "series_annotation": [
+      {
+        "name": "series"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "series_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "series"
+      },
+      {
+        "name": "series_attribute_type"
+      },
+      {
+        "name": "series_attribute_type_allowed_value"
+      },
+      {
+        "name": "series_attribute_text"
+      }
+    ],
+    "series_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "series_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "series_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "series_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "series_ordering_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "series_tag": [
+      {
+        "name": "series"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "series_tag_raw": [
+      {
+        "name": "series"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "series_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "entity_type"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "tag": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "ref_count"
+      }
+    ],
+    "tag_relation": [
+      {
+        "name": "tag1"
+      },
+      {
+        "name": "tag2"
+      },
+      {
+        "name": "weight"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "track": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "recording"
+      },
+      {
+        "name": "medium"
+      },
+      {
+        "name": "position"
+      },
+      {
+        "name": "number"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "artist_credit"
+      },
+      {
+        "name": "length"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "is_data_track",
+        "bool": true
+      }
+    ],
+    "track_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "track_raw": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "release"
+      },
+      {
+        "name": "title"
+      },
+      {
+        "name": "artist"
+      },
+      {
+        "name": "sequence"
+      }
+    ],
+    "unreferenced_row_log": [
+      {
+        "name": "table_name"
+      },
+      {
+        "name": "row_id"
+      },
+      {
+        "name": "inserted"
+      }
+    ],
+    "url": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "url"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "url_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "vote": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "edit"
+      },
+      {
+        "name": "vote"
+      },
+      {
+        "name": "vote_time"
+      },
+      {
+        "name": "superseded",
+        "bool": true
+      }
+    ],
+    "work": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "gid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "work_alias": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "work"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "last_updated"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "sort_name"
+      },
+      {
+        "name": "begin_date_year"
+      },
+      {
+        "name": "begin_date_month"
+      },
+      {
+        "name": "begin_date_day"
+      },
+      {
+        "name": "end_date_year"
+      },
+      {
+        "name": "end_date_month"
+      },
+      {
+        "name": "end_date_day"
+      },
+      {
+        "name": "primary_for_locale",
+        "bool": true
+      },
+      {
+        "name": "ended",
+        "bool": true
+      }
+    ],
+    "work_alias_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "work_annotation": [
+      {
+        "name": "work"
+      },
+      {
+        "name": "annotation"
+      }
+    ],
+    "work_attribute": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "work"
+      },
+      {
+        "name": "work_attribute_type"
+      },
+      {
+        "name": "work_attribute_type_allowed_value"
+      },
+      {
+        "name": "work_attribute_text"
+      }
+    ],
+    "work_attribute_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "comment"
+      },
+      {
+        "name": "free_text",
+        "bool": true
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "work_attribute_type_allowed_value": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "work_attribute_type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ],
+    "work_gid_redirect": [
+      {
+        "name": "gid"
+      },
+      {
+        "name": "new_id"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "work_language": [
+      {
+        "name": "work"
+      },
+      {
+        "name": "language"
+      },
+      {
+        "name": "edits_pending"
+      },
+      {
+        "name": "created"
+      }
+    ],
+    "work_meta": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "rating"
+      },
+      {
+        "name": "rating_count"
+      }
+    ],
+    "work_rating_raw": [
+      {
+        "name": "work"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "rating"
+      }
+    ],
+    "work_tag": [
+      {
+        "name": "work"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "last_updated"
+      }
+    ],
+    "work_tag_raw": [
+      {
+        "name": "work"
+      },
+      {
+        "name": "editor"
+      },
+      {
+        "name": "tag"
+      },
+      {
+        "name": "is_upvote",
+        "bool": true
+      }
+    ],
+    "work_type": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "parent"
+      },
+      {
+        "name": "child_order"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "gid"
+      }
+    ]
+  }
+}

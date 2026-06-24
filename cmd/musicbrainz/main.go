@@ -20,6 +20,7 @@ func newRootCmd() *cobra.Command {
 			return nil
 		},
 	})
+	root.AddCommand(newGenSchemaCmd())
 	return root
 }
 
