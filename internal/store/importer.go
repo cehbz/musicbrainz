@@ -5,8 +5,10 @@ import (
 	"compress/bzip2"
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"github.com/cehbz/musicbrainz/internal/dumps"
@@ -161,13 +163,19 @@ func RunImport(dataRoot, dumpDir string) (Report, error) {
 		skipped = append(skipped, res.Skipped...)
 	}
 
-	for _, t := range []string{"canonical_musicbrainz_data", "canonical_recording_redirect", "canonical_release_redirect"} {
-		f, err := os.Open(filepath.Join(dumpDir, t+".csv"))
+	var canonCounts map[string]int
+	// pattern is static, so Glob cannot error
+	canonMatches, _ := filepath.Glob(filepath.Join(dumpDir, "musicbrainz-canonical-dump-*.tar.zst"))
+	if len(canonMatches) == 0 {
+		log.Printf("WARNING: no canonical dump (musicbrainz-canonical-dump-*.tar.zst) in %s; canonical_* tables will be empty", dumpDir)
+	} else {
+		sort.Strings(canonMatches)
+		cf, err := os.Open(canonMatches[len(canonMatches)-1]) // newest
 		if err != nil {
-			continue // canonical CSV optional if absent from dumpDir
+			return fail(err)
 		}
-		_, err = db.LoadCanonical(t, f)
-		f.Close()
+		canonCounts, err = LoadCanonicalTarZst(db, cf)
+		cf.Close()
 		if err != nil {
 			return fail(err)
 		}
@@ -209,6 +217,6 @@ func RunImport(dataRoot, dumpDir string) (Report, error) {
 		return rep, err
 	}
 
-	rep.Counts, rep.Malformed, rep.Skipped, rep.DiscogsCoverage = counts, malformed, skipped, cov
+	rep.Counts, rep.Malformed, rep.Skipped, rep.DiscogsCoverage, rep.Canonical = counts, malformed, skipped, cov, canonCounts
 	return rep, nil
 }

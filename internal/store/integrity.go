@@ -6,6 +6,7 @@ type Report struct {
 	Counts          map[string]int
 	Orphans         map[string]int
 	DiscogsCoverage map[string]int
+	Canonical       map[string]int // per-table canonical row counts; empty if canonical absent
 	Skipped         []string       // mbdump entries with no matching table
 	Malformed       map[string]int // table -> rows skipped (bad column count)
 }

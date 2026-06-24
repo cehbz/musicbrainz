@@ -19,6 +19,11 @@ func newImportCmd() *cobra.Command {
 				return err
 			}
 			fmt.Fprintf(cmd.OutOrStdout(), "imported: %d tables; discogs coverage: %v\n", len(rep.Counts), rep.DiscogsCoverage)
+			if len(rep.Canonical) == 0 {
+				fmt.Fprintf(cmd.OutOrStdout(), "WARNING: canonical tables are empty\n")
+			} else {
+				fmt.Fprintf(cmd.OutOrStdout(), "canonical: %v\n", rep.Canonical)
+			}
 			if len(rep.Skipped) > 0 {
 				fmt.Fprintf(cmd.OutOrStdout(), "skipped %d entries with no matching table:\n", len(rep.Skipped))
 				for _, s := range rep.Skipped {

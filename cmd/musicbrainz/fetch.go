@@ -13,7 +13,8 @@ import (
 const defaultDumpBase = "https://data.metabrainz.org/pub/musicbrainz/data"
 
 // runFetch resolves the export dir (or uses `date`), downloads the core+derived tarballs
-// and SHA256SUMS into dest, verifies them, and returns the resolved dir name.
+// and SHA256SUMS into dest, verifies them, fetches the canonical dump, and returns the
+// resolved fullexport dir name.
 func runFetch(ctx context.Context, dest, date string) (string, error) {
 	cl := &dumps.Client{Base: defaultDumpBase}
 	dir := date
@@ -37,6 +38,17 @@ func runFetch(ctx context.Context, dest, date string) (string, error) {
 	if err := dumps.VerifySHA256(dest, "SHA256SUMS", files[:2]); err != nil {
 		return "", err
 	}
+
+	// fetch canonical dump
+	cdir, err := cl.ResolveLatestCanonical(ctx)
+	if err != nil {
+		return "", fmt.Errorf("resolve canonical: %w", err)
+	}
+	if _, err := cl.DownloadCanonical(ctx, cdir, dest); err != nil {
+		return "", fmt.Errorf("download canonical: %w", err)
+	}
+	fmt.Printf("fetched canonical %s\n", cdir)
+
 	return dir, nil
 }
 
@@ -50,7 +62,7 @@ func newFetchCmd() *cobra.Command {
 			if err != nil {
 				return err
 			}
-			fmt.Fprintf(cmd.OutOrStdout(), "fetched fullexport %s into %s (canonical: fetch separately per spec)\n", dir, dest)
+			fmt.Fprintf(cmd.OutOrStdout(), "fetched fullexport %s into %s\n", dir, dest)
 			return nil
 		},
 	}
