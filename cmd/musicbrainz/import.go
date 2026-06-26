@@ -23,20 +23,7 @@ func newImportCmd() *cobra.Command {
 				total += n
 			}
 			fmt.Fprintf(cmd.OutOrStdout(), "imported: %d tables; discogs coverage: %v; orphan total: %d\n", len(rep.Counts), rep.DiscogsCoverage, total)
-			if len(rep.Canonical) == 0 {
-				fmt.Fprintf(cmd.OutOrStdout(), "WARNING: canonical tables are empty\n")
-			} else {
-				fmt.Fprintf(cmd.OutOrStdout(), "canonical: %v\n", rep.Canonical)
-			}
-			if len(rep.Skipped) > 0 {
-				fmt.Fprintf(cmd.OutOrStdout(), "skipped %d entries with no matching table:\n", len(rep.Skipped))
-				for _, s := range rep.Skipped {
-					fmt.Fprintf(cmd.OutOrStdout(), "  %s\n", s)
-				}
-			}
-			if len(rep.Malformed) > 0 {
-				fmt.Fprintf(cmd.OutOrStdout(), "malformed rows (skipped): %v\n", rep.Malformed)
-			}
+			writeReportDetail(cmd.OutOrStdout(), rep)
 			return nil
 		},
 	}

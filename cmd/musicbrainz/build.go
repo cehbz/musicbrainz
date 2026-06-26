@@ -27,12 +27,8 @@ func newBuildCmd() *cobra.Command {
 			for _, n := range rep.Orphans {
 				total += n
 			}
-			fmt.Fprintf(cmd.OutOrStdout(), "built: %d tables, %d skipped, discogs coverage %v, orphan total: %d\n", len(rep.Counts), len(rep.Skipped), rep.DiscogsCoverage, total)
-			if len(rep.Canonical) == 0 {
-				fmt.Fprintf(cmd.OutOrStdout(), "WARNING: canonical tables are empty\n")
-			} else {
-				fmt.Fprintf(cmd.OutOrStdout(), "canonical: %v\n", rep.Canonical)
-			}
+			fmt.Fprintf(cmd.OutOrStdout(), "built: %d tables, discogs coverage %v, orphan total: %d\n", len(rep.Counts), rep.DiscogsCoverage, total)
+			writeReportDetail(cmd.OutOrStdout(), rep)
 			return nil
 		},
 	}
