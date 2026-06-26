@@ -23,6 +23,18 @@ func newVerifyCmd() *cobra.Command {
 				return err
 			}
 			fmt.Fprintf(cmd.OutOrStdout(), "counts: %v\n", counts)
+			orphans, err := db.OrphanPass()
+			if err != nil {
+				return err
+			}
+			total := 0
+			for _, n := range orphans {
+				total += n
+			}
+			fmt.Fprintf(cmd.OutOrStdout(), "orphan total: %d\n", total)
+			if total > 0 {
+				fmt.Fprintf(cmd.OutOrStdout(), "orphans: %v\n", orphans)
+			}
 			return nil
 		},
 	}
